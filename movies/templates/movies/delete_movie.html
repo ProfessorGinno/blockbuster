@@ -1,0 +1,8 @@
+<form action = {% url "delete_movie" movie.id %} method="POST">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <button "btn btn:primary" type="submit">delete</button>
+</form>
+
