@@ -8,11 +8,3 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username + ' - profile'
-
-    """
-    username = models.CharField(max_length=100)
-    name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    age = models.IntegerField()
-    password = models.CharField(max_length=100)
-    profile_picture = models.ImageField(upload_to="accounts", null=True, blank=True)"""

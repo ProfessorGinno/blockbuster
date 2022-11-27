@@ -8,8 +8,16 @@
   <div class="container-fluid px-5">
     <a class="navbar-brand">Blockbuster Streaming App</a>
     <div class="d-flex">
-      <button type="button" class="btn btn-danger top-sign-in">Login</button>
-      <button type="button" class="btn btn-danger top-sign-in">Sign up</button>
+      {% if user.is_authenticated %}
+      <button type="button" class="btn btn-danger top-sign-in">You are authenticated</button>
+      {% else %}
+      <a href="{% url 'login' %}">
+        <button type="button" class="btn btn-danger top-sign-in">Login</button>
+      </a>
+      <a href="{% url 'signup' %}">
+        <button type="button" class="btn btn-danger top-sign-in">Sign up</button>
+      </a>
+      {% endif %}
     </div>
   </div>
 </nav>
