@@ -1,0 +1,8 @@
+<form action = {% url "create_movie" %} method="POST">
+    {% csrf_token %}
+    <table>
+        {{form.as_table}}
+    </table>
+    <button "btn btn:primary" type="submit">submit</button>
+</form>
+
