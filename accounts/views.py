@@ -1,8 +1,9 @@
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.models import User
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
+
 from django.views.generic import DeleteView, CreateView
 
 from django.shortcuts import render, redirect
@@ -33,6 +34,13 @@ class UserDelete(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
 
 class UserLogout(LoginRequiredMixin, LogoutView):
     template_name = 'accounts/user_logout.html'
+
+
+class ChangePassword(LoginRequiredMixin, PasswordChangeView):
+    model = User
+    form_class = PasswordChangeForm
+    template_name = 'accounts/change_password.html'
+    success_url = reverse_lazy("profile")
 
 
 @login_required
