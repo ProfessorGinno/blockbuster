@@ -33,9 +33,9 @@
                         <div class="main-navigation">
                             <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
                             <ul class="menu">
-                                <li class="menu-item current-menu-item"><a href="index.html">Home</a></li>
                                 <li class="menu-item"><a href="about.html">About</a></li>
                                 <li class="menu-item"><a href={% url 'create_movie' %}>Create Movie</a></li>
+                                <li class="menu-item"><a href={% url 'profile' %}>User Profile</a></li>
                                 <li class="menu-item"><a href={% url 'logout' %}>Logout</a></li>
                             </ul> <!-- .menu -->
 
@@ -55,9 +55,13 @@
                                 <div class="col-md-9">
                                     <div class="slider">
                                         <ul class="slides">
-                                            {% if movie.0 and movie.1 and movie.2 %}
+                                            {% if movie.0 %}
                                             <li><a href={% url 'detailed_movie' movie.0.id %}><img style="height:660px" src={{ movie.0.cover_image.url }} alt="Slide 1"></a></li>
+                                            {% endif %}
+                                            {% if movie.1 %}
                                             <li><a href={% url 'detailed_movie' movie.1.id %}><img style="height:660px" src={{ movie.1.cover_image.url }} alt="Slide 2"></a></li>
+                                            {% endif %}
+                                            {% if movie.2 %}
                                             <li><a href={% url 'detailed_movie' movie.2.id %}><img style="height:660px" src={{ movie.2.cover_image.url }} alt="Slide 3"></a></li>
                                             {% endif %}
                                         </ul>
@@ -69,8 +73,6 @@
                                             <div class="latest-movie">
                                                 {% if movie.3 %}
                                                 <a href={% url 'detailed_movie' movie.3.id %}><img style="height:315px" src={{ movie.3.cover_image.url }} alt="Movie 1"></a>
-                                                {% elif movie.3 is null and movie.0 %}
-                                                <a href={% url 'detailed_movie' movie.0.id %}><img style="height:315px" src={{ movie.0.cover_image.url }} alt="Movie 1"></a>
                                                 {% endif %}
                                             </div>
                                         </div>
@@ -114,7 +116,10 @@
                                     </div>
                                 </div>
                             </div> <!-- .row -->
-                            
+                            <form action={% url 'search-movie' %} method="GET">
+                                <input name="q" type="text" placeholder="Search movie or genre">
+                                <input type="submit" value="Search Movie">
+                            </form>
                             <div class="row">
                                 <div class="col-md-4">
                                     <h2 class="section-title">Coming-up premieres</h2>

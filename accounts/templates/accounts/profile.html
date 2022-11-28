@@ -54,6 +54,12 @@
                     width="150px"
                     src="{{ request.user.userprofile.image.url }}"
                 />
+            {% else %}
+                <img
+                class="rounded-circle mb-2 mt-2"
+                width="150px"
+                src="{% static 'img/generic-user-image.png'%}"
+                />
             {% endif %}
         </div>
     </div>

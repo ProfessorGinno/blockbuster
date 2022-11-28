@@ -14,7 +14,6 @@ class Movie (models.Model):
     movie_file_4k = models.FileField(upload_to='movie_file/', blank=False, default=None)
     movie_file_uhd = models.FileField(upload_to='movie_file/', blank=False, default=None)
 
-
  
     def __str__(self) -> str:
         return f"title is {self.title}, the id is {self.id}, the image is {self.cover_image}"
