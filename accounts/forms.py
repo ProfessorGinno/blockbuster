@@ -1,6 +1,7 @@
 from django import forms
 
 
+
 class UserEditForm(forms.Form):
 
     email = forms.EmailField(label='', required=False, widget=forms.TextInput(attrs={'Placeholder':'Email'}) )
@@ -12,3 +13,5 @@ class UserEditForm(forms.Form):
     state= forms.CharField(label='', max_length=100, required=False, widget=forms.TextInput(attrs={'Placeholder':'State/Region'}))
     city = forms.CharField(label='', max_length=100, required=False, widget=forms.TextInput(attrs={'Placeholder': 'City'}))
     image = forms.ImageField(label='Imagen', required=False)
+
+

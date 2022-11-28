@@ -1,14 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
 
-{% block title %}Eliminar Profile{% endblock title %}
-
+{% block head %}
+    <link rel="stylesheet" type="text/css" href={% static "css/accounts.css" %}>
+{% endblock head %}
 
 {% block content %}
-<form action={% url 'delete_profile' user.id %} method="POST">
-    {% csrf_token %}
-    <p>
-        ¿Quieres borrar al usuario {{user}}?
-    </p>
-    <button>Confirmar</button>
-</form>
+<div class='bg-img'>
+    <div class='sign-up-form'>
+        <form action={% url 'delete_profile' user.id %} method="POST">
+            <h2>¿Quieres borrar al usuario {{user}}?</h2>
+            {% csrf_token %}
+        </form>
+            <div class="col-md-12 btn-container">
+                <button class="btn btn-primary profile-button-signup" type="submit">Confirmar</button>
+                <a href={% url 'home' %}><button class="btn btn-primary profile-button-signup mx-2" type="button">Cancel</button></a>
+        </div>
+    </div>
+</div>
 {% endblock content %}
