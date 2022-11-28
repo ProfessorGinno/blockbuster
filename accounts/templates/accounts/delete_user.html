@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Eliminar Profile{% endblock title %}
+
+
+{% block content %}
+<form action={% url 'delete_profile' user.id %} method="POST">
+    {% csrf_token %}
+    <p>
+        ¿Quieres borrar al usuario {{user}}?
+    </p>
+    <button>Confirmar</button>
+</form>
+{% endblock content %}

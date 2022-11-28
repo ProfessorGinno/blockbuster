@@ -1,2 +1,16 @@
-<h1>Logout</h1>
-<a href={% url 'home'%}>Go to home</a>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href={% static "css/accounts.css" %}>
+{% endblock head %}
+
+{% block content %}
+<div class='bg-img'>
+    <div class='logout'>
+        <a href={% url 'home' %}>
+            <button class='btn btn-danger btn-lg' style="--bs-btn-padding-y: 2rem; --bs-btn-padding-x: 2rem;" type='submit'>You've correctly logged out. <br> <br> Click here to go home</button>
+        </a>
+    </div>
+</div>
+{% endblock content %}

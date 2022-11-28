@@ -1,4 +1,4 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView, LogoutView
 
@@ -27,6 +27,13 @@ class UserLogin(LoginView):
     next_page = reverse_lazy('movie_index')
 
 
+class UserDelete(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
+    model = User
+    permission_required = 'accounts.delete_user'
+    success_url = reverse_lazy("home")
+    template_name = 'accounts/delete_user.html'
+
+
 class UserLogout(LoginRequiredMixin, LogoutView):
     template_name = 'accounts/user_logout.html'
 
@@ -50,28 +57,31 @@ def user_update(request):
             user_profile.country = data.get("country")
             user_profile.state = data.get("state")
             user_profile.city = data.get("city")
-            user_profile.image = data.get("image")
+            user_profile.image = data.get("image") if data.get('image') else user_profile.image
 
             user_profile.save()
             user.save()
-            return redirect("update_profile")
-        else:
-            return render(request, 'accounts/edit_user.html', {'form_update': form_update})
-    form_update = UserEditForm(
-        initial={
-            "first_name": user.first_name,
-            "last_name": user.last_name,
-            "email": user.email,
-            "phone": user.userprofile.phone,
-            "address": user.userprofile.address,
-            "country": user.userprofile.country,
-            "state": user.userprofile.state,
-            "city": user.userprofile.city,
-            "image": user.userprofile.image
-        }
-    )
+            return redirect("profile")
+    else:
+        form_update = UserEditForm(
+            initial={
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "email": user.email,
+                "phone": user.userprofile.phone,
+                "address": user.userprofile.address,
+                "country": user.userprofile.country,
+                "state": user.userprofile.state,
+                "city": user.userprofile.city,
+                "image": user.userprofile.image
+            }
+        )
+    print(form_update.initial)
     return render(request, 'accounts/edit_user.html', {'form_update': form_update})
 
+@login_required
+def profile(request):
+    return render(request, 'accounts/profile.html')
 
 def sign_up_success(request):
     return render(request, template_name="accounts/sign_up_success.html")

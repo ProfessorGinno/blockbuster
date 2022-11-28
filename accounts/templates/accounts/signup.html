@@ -23,7 +23,8 @@
                     {{ form.password2 | as_crispy_field}}
                 </div>
                 <div class="col-md-12 btn-container">
-                    <button class="btn btn-primary profile-button-signup" type="submit">Sign Up</button>                </div>
+                    <button class="btn btn-primary profile-button-signup" type="submit">Sign Up</button>
+                    <a href={% url 'home' %}><button class="btn btn-primary profile-button-signup mx-2" type="button">Cancel</button></a>
             </div>
         </form>
     </div>
