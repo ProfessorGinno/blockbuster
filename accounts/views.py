@@ -1,15 +1,12 @@
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView, LogoutView
-
+from django.views.generic import DeleteView, CreateView
 
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
-
-from django.views.generic.list import ListView
-from django.views.generic import DeleteView, CreateView
 
 from .forms import UserEditForm
 from . models import UserProfile
