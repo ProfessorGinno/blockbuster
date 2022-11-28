@@ -1,11 +1,11 @@
 from django.urls import path
-from django.contrib import admin
-from .views import UserSignUp, UserLogin, UserLogout
+from .views import UserSignUp, UserLogin, UserLogout, ProfileUpdate, sign_up_success
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('signup/', UserSignUp.as_view(), name='signup'),
+    path('sign-up-success/', sign_up_success, name='signup_success'),
     path('login/', UserLogin.as_view(), name='login'),
     path('logout/', UserLogout.as_view(), name='logout'),
+    path('user-profile/<int:pk>', ProfileUpdate.as_view(), name="profile-update"),
 ]
