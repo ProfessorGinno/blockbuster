@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{%block head %} <link href= {% static 'css/accounts.css' %} rel='stylesheet'> {%endblock head %}
+
+{% block title %}Edit User{% endblock title %}
+
+{% block content %}
+
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="d-flex flex-row align-items-center justify-content-center mt-5 mb-5 px-5 py-5">
+        <div class="col-5">
+            <div class="col-md-12">
+                <h4 class="font-weight-bold">Username: <strong> {{ request.user.username }}</strong></h4>
+            </div>
+            <div class="col-md-12">
+                <span class="text-black-65">Name: {{ request.user.first_name }} {{request.user.last_name}}</span>
+            </div>
+            <div class="col-md-12">
+                <span class="text-black-65">Email: {{request.user.email}}</span>
+            </div>
+            <div class="col-md-12">
+                <span class="text-black-65">Mobile Number: {{ request.user.userprofile.phone }}</span>
+            </div>
+            <div class="col-md-12">
+                <span class="text-black-65">Address Line: {{ request.user.userprofile.address }}</span>
+            </div>
+            <div class="col-md-12">
+                <span class="text-black-65">Country: {{ request.user.userprofile.country }}</span>
+            </div>
+            <div class="col-md-12">
+                <span class="text-black-65">State/Region: {{ request.user.userprofile.state }}</span>
+            </div>
+            <div class="col-md-12">
+                <span class="text-black-65">City: {{ request.user.userprofile.city }}</span>
+            </div>
+        </div>
+        <div class="col-6 d-flex flex-column  align-items-center">
+            <div class="row">
+                <div class="col-5 mt-2  align-self-center">
+                    <h4>Profile Info</h4>
+                </div>
+                <div class="col-2 mt-2 align-self-center">
+                    <a href={% url 'update_profile' %}><button class="btn btn-danger">Edit</button></a>
+                </div>
+                <div class="col-5 mt-2 align-self-center">
+                    <a href={% url 'movie_index' %}><button class="btn btn-danger">Movie Index</button></a>
+                </div>
+            </div>
+            {% if request.user.userprofile.image %}
+                <img
+                    class="rounded-circle mb-2 mt-2"
+                    width="150px"
+                    src="{{ request.user.userprofile.image.url }}"
+                />
+            {% endif %}
+        </div>
+    </div>
+    <div class="pb-5 d-flex justify-content-center">
+        {% if perms.accounts.delete_user %}
+            <a href={% url 'delete_profile' user.id %}><button class="btn btn-danger ">Delete account</button></a>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

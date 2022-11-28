@@ -34,17 +34,17 @@ background: #ff0000
 }
 
 .profile-button:focus {
-background: #682773;
+background: #732727;
 box-shadow: none
 }
 
 .profile-button:active {
-background: #682773;
+background: #732727;
 box-shadow: none
 }
 
 .back:hover {
-color: #682773;
+color: #732727;
 cursor: pointer
 }
 
@@ -53,10 +53,10 @@ font-size: 11px
 }
 
 .add-experience:hover {
-background: #BA68C8;
+background: #c86868;
 color: #fff;
 cursor: pointer;
-border: solid 1px #BA68C8
+border: solid 1px #c86868
 }
 
 .bg-img{
@@ -71,7 +71,7 @@ border: solid 1px #BA68C8
 
 .sign-up-form{
   width: 500px;
-  background:rgb(255, 0, 0);
+  background:rgb(22, 22, 22);
   padding: 1.5%;
   position: absolute;
   top: 50%;
@@ -80,18 +80,43 @@ border: solid 1px #BA68C8
   color: #f1f1f1;
 }
 
-.profile-button-signup {
-  background: rgb(37, 37, 37);
-  box-shadow: none;
-  border: none
-  
-  }
-  
-.profile-button-signup:hover {
-background: rgb(0, 0, 0)
-}
 
 .btn-container {
   display: flex;
   justify-content: center;
+}
+
+a:link, a:visited, a:active {
+  text-decoration:none;
+}
+
+.sign-up-success{
+  width: 500px;
+  padding: 1.5%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f1f1f1;
+}
+
+.login-form{
+  width: 500px;
+  background:rgb(0, 0, 0);
+  padding: 1.5%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f1f1f1;
+}
+
+.logout{
+  width: 500px;
+  padding: 1.5%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f1f1f1;
 }
