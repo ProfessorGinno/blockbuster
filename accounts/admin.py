@@ -1,3 +1,10 @@
 from django.contrib import admin
+from accounts.models import UserProfile
 
-# Register your models here.
+
+""" @admin.register(UserProfile)
+class UserProfile(admin.ModelAdmin):
+    list_display = ['user','phone','address','image'] """
+
+admin.site.register(UserProfile)
+

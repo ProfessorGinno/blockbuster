@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href={% static "css/accounts.css" %}>
+{% endblock head %}
+
+{% block content %}
+<div class='bg-img'>
+    <div class='sign-up-form'>
+        <a href={% url 'login' %}>
+            <button class='btn btn:primary' type='submit'>Congratulations! You've created a new account. Click here to go to login</button>
+        </a>
+    </div>
+</div>
+{% endblock content %}

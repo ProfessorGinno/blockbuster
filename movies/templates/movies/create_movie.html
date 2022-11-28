@@ -1,8 +1,7 @@
-<form action = {% url "create_movie" %} method="POST">
+<form action = {% url "create_movie" %} method="POST" enctype='multipart/form-data'>
     {% csrf_token %}
     <table>
         {{form.as_table}}
     </table>
     <button "btn btn:primary" type="submit">submit</button>
 </form>
-

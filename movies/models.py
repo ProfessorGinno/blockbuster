@@ -7,6 +7,8 @@ class Movie (models.Model):
     description = models.TextField()
     size = models.IntegerField()
     date = models.DateField()
+    cover_image = models.ImageField(upload_to='cover_image/', blank=True)
+
  
     def __str__(self) -> str:
-        return f"title is {self.title}"
+        return f"title is {self.title}, the id is {self.id}, the image is {self.cover_image}"

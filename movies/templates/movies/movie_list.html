@@ -1,7 +1,18 @@
-<h1>list</h1>
-<ul>
-    {% for movie in object_list %}
-    <li> {{movie}}
-    </li>
-    {% endfor %}
-</ul>
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+    <title>Movie Review</title>
+{% endblock title %}
+
+{% block content %}
+    <h1>list</h1>
+    <ul>
+        {% for movie in object_list %}
+        <li> {{movie}}
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
