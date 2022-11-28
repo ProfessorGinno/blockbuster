@@ -9,7 +9,7 @@
 {% endblock head %}
 
 {% block title %}
-    <title>Movie Index</title>
+    Movie Index
 {% endblock title %}
 
 {% block content %}
@@ -56,9 +56,9 @@
                                     <div class="slider">
                                         <ul class="slides">
                                             {% if movie.0 and movie.1 and movie.2 %}
-                                            <li><a href={% url 'detailed_movie' movie.0.id %}><img style="max-height:460px" src={{ movie.0.cover_image.url }} alt="Slide 1"></a></li>
-                                            <li><a href={% url 'detailed_movie' movie.1.id %}><img style="max-height:460px" src={{ movie.1.cover_image.url }} alt="Slide 2"></a></li>
-                                            <li><a href={% url 'detailed_movie' movie.2.id %}><img style="max-height:460px" src={{ movie.2.cover_image.url }} alt="Slide 3"></a></li>
+                                            <li><a href={% url 'detailed_movie' movie.0.id %}><img style="height:660px" src={{ movie.0.cover_image.url }} alt="Slide 1"></a></li>
+                                            <li><a href={% url 'detailed_movie' movie.1.id %}><img style="height:660px" src={{ movie.1.cover_image.url }} alt="Slide 2"></a></li>
+                                            <li><a href={% url 'detailed_movie' movie.2.id %}><img style="height:660px" src={{ movie.2.cover_image.url }} alt="Slide 3"></a></li>
                                             {% endif %}
                                         </ul>
                                     </div>
@@ -68,14 +68,14 @@
                                         <div class="col-sm-6 col-md-12">
                                             <div class="latest-movie">
                                                 {% if movie.3 %}
-                                                <a href={% url 'detailed_movie' movie.3.id %}><img style="max-height:215px" src={{ movie.3.cover_image.url }} alt="Movie 1"></a>
+                                                <a href={% url 'detailed_movie' movie.3.id %}><img style="height:315px" src={{ movie.3.cover_image.url }} alt="Movie 1"></a>
                                                 {% endif %}
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-12">
                                             <div class="latest-movie">
                                                 {% if movie.4 %}
-                                                <a href={% url 'detailed_movie' movie.4.id %}><img style="max-height:215px" src={{ movie.4.cover_image.url }} alt="Movie 2"></a>
+                                                <a href={% url 'detailed_movie' movie.4.id %}><img style="height:315px" src={{ movie.4.cover_image.url }} alt="Movie 2"></a>
                                                 {% endif %}
                                             </div>
                                         </div>
@@ -86,28 +86,28 @@
                                 <div class="col-sm-6 col-md-3">
                                     <div class="latest-movie">
                                         {% if movie.5 %}
-                                        <a href={% url 'detailed_movie' movie.5.id %}><img style="max-height:215px" src={{ movie.5.cover_image.url }} alt="Movie 3"></a>
+                                        <a href={% url 'detailed_movie' movie.5.id %}><img style="height:315px" src={{ movie.5.cover_image.url }} alt="Movie 3"></a>
                                         {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-md-3">
                                     <div class="latest-movie">
                                         {% if movie.6 %}
-                                        <a href={% url 'detailed_movie' movie.6.id %}><img style="max-height:215px" src={{ movie.6.cover_image.url }} alt="Movie 3"></a>
+                                        <a href={% url 'detailed_movie' movie.6.id %}><img style="height:315px" src={{ movie.6.cover_image.url }} alt="Movie 3"></a>
                                         {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-md-3">
                                     <div class="latest-movie">
                                         {% if movie.7 %}
-                                        <a href={% url 'detailed_movie' movie.7.id %}><img style="max-height:215px" src={{ movie.7.cover_image.url }} alt="Movie 3"></a>
+                                        <a href={% url 'detailed_movie' movie.7.id %}><img style="height:315px" src={{ movie.7.cover_image.url }} alt="Movie 3"></a>
                                         {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-sm-6 col-md-3">
                                     <div class="latest-movie">
                                         {% if movie.8 %}
-                                        <a href={% url 'detailed_movie' movie.8.id %}><img style="max-height:215px" src={{ movie.8.cover_image.url }} alt="Movie 3"></a>
+                                        <a href={% url 'detailed_movie' movie.8.id %}><img style="height:315px" src={{ movie.8.cover_image.url }} alt="Movie 3"></a>
                                         {% endif %}
                                     </div>
                                 </div>
