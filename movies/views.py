@@ -19,7 +19,7 @@ class CreateMovie(CreateView):
     model = Movie
     template_name = "movies/create_movie.html"
     success_url = "/movie-index"
-    fields = ["title", "genre", "description", "date", "size", "cover_image"]
+    fields = ["title", "genre", "description", "date", "cover_image", "scene_image_1", "scene_image_3", "scene_image_2", "trailer_link", "movie_file_4k", "movie_file_uhd"]
 
 
 class ListMovie(ListView):
@@ -30,11 +30,10 @@ class UpdateMovie(UpdateView):
     model = Movie
     template_name = "movies/update_movie.html"
     success_url = "/movie-index"
-    fields = ["title", "genre", "description", "date", "size", "cover_image"]
+    fields = ["title", "genre", "description", "date", "cover_image", "scene_image_1", "scene_image_3", "scene_image_2", "trailer_link", "movie_file_4k", "movie_file_uhd"]
 
 
 class DeleteMovie(DeleteView):
     model = Movie
     template_name = "movies/delete_movie.html"
     success_url = "/movie-index"
-    fields = ["title", "genre", "description", "date", "size"]

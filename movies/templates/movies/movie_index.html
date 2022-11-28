@@ -69,6 +69,8 @@
                                             <div class="latest-movie">
                                                 {% if movie.3 %}
                                                 <a href={% url 'detailed_movie' movie.3.id %}><img style="height:315px" src={{ movie.3.cover_image.url }} alt="Movie 1"></a>
+                                                {% elif movie.3 is null and movie.0 %}
+                                                <a href={% url 'detailed_movie' movie.0.id %}><img style="height:315px" src={{ movie.0.cover_image.url }} alt="Movie 1"></a>
                                                 {% endif %}
                                             </div>
                                         </div>
@@ -115,68 +117,66 @@
                             
                             <div class="row">
                                 <div class="col-md-4">
-                                    <h2 class="section-title">December premiere</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                                    <h2 class="section-title">Coming-up premieres</h2>
                                     <ul class="movie-schedule">
                                         <li>
-                                            <div class="date">16/12</div>
-                                            <h2 class="entry-title"><a href="#">Perspiciatis unde omnis</a></h2>
+                                            <div class="date">Nov 2022
+                                            </div>
+                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">The black panther</span></a></h2>
                                         </li>
                                         <li>
-                                            <div class="date">16/12</div>
-                                            <h2 class="entry-title"><a href="#">Perspiciatis unde omnis</a></h2>
+                                            <div class="date">Jan 2023</div>
+                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">Fast and furious 23</span></a></h2>
                                         </li>
                                         <li>
-                                            <div class="date">16/12</div>
-                                            <h2 class="entry-title"><a href="#">Perspiciatis unde omnis</a></h2>
+                                            <div class="date">Jan 2023</div>
+                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">Sharknado 32</span></a></h2>
                                         </li>
                                         <li>
-                                            <div class="date">16/12</div>
-                                            <h2 class="entry-title"><a href="#">Perspiciatis unde omnis</a></h2>
+                                            <div class="date">Feb 2023</div>
+                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">Karate-kid: Now with real asians</span></a></h2>
                                         </li>
                                     </ul> <!-- .movie-schedule -->
                                 </div>
                                 <div class="col-md-4">
-                                    <h2 class="section-title">November premiere</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                                    <h2 class="section-title">Most waited premieres</h2>
                                     <ul class="movie-schedule">
                                         <li>
-                                            <div class="date">16/12</div>
-                                            <h2 class="entry-title"><a href="#">Perspiciatis unde omnis</a></h2>
+                                            <div class="date">Dec 2024</div>
+                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">The pirates of caribbean 8</span></a></h2>
                                         </li>
                                         <li>
-                                            <div class="date">16/12</div>
-                                            <h2 class="entry-title"><a href="#">Perspiciatis unde omnis</a></h2>
+                                            <div class="date">Oct 2025</div>
+                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">John Carter 2</span></a></h2>
                                         </li>
                                         <li>
-                                            <div class="date">16/12</div>
-                                            <h2 class="entry-title"><a href="#">Perspiciatis unde omnis</a></h2>
+                                            <div class="date">Nov 2025</div>
+                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">Sheena the warrior princess 2025</span></a></h2>
                                         </li>
                                         <li>
-                                            <div class="date">16/12</div>
-                                            <h2 class="entry-title"><a href="#">Perspiciatis unde omnis</a></h2>
+                                            <div class="date">Jun 2040</div>
+                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">Avatar 3</span></a></h2>
                                         </li>
                                     </ul> <!-- .movie-schedule -->
                                 </div>
                                 <div class="col-md-4">
-                                    <h2 class="section-title">October premiere</h2>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                                    <h2 class="section-title">Latest Academy awards</h2>
                                     <ul class="movie-schedule">
                                         <li>
-                                            <div class="date">16/12</div>
-                                            <h2 class="entry-title"><a href="#">Perspiciatis unde omnis</a></h2>
+                                            <div class="date">Jan 2022</div>
+                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">Black Adam</span></a></h2>
                                         </li>
                                         <li>
-                                            <div class="date">16/12</div>
-                                            <h2 class="entry-title"><a href="#">Perspiciatis unde omnis</a></h2>
+                                            <div class="date">Jan 2022</div>
+                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">GodFather</span></a></h2>
                                         </li>
                                         <li>
-                                            <div class="date">16/12</div>
-                                            <h2 class="entry-title"><a href="#">Perspiciatis unde omnis</a></h2>
+                                            <div class="date">Aug 2022</div>
+                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">Fullmetal Alchemist</span></a></h2>
                                         </li>
                                         <li>
-                                            <div class="date">16/12</div>
-                                            <h2 class="entry-title"><a href="#">Perspiciatis unde omnis</a></h2>
+                                            <div class="date">Sept 2022</div>
+                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">One piece Film</span></a></h2>
                                         </li>
                                     </ul> <!-- .movie-schedule -->
                                 </div>
@@ -187,74 +187,16 @@
                 <footer class="site-footer">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-md-12">
                                 <div class="widget">
                                     <h3 class="widget-title">About Us</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia tempore vitae mollitia nesciunt saepe cupiditate</p>
+                                    <p>We're a company that brings multimedia entertainment to the palm of your hand. <img style="width:10%;" src={% static 'img/blockbuster-img.png' %} alt=""></p>
                                 </div>
                             </div>
-                            <div class="col-md-2">
-                                <div class="widget">
-                                    <h3 class="widget-title">Recent Review</h3>
-                                    <ul class="no-bullet">
-                                        <li><a href="#">Lorem ipsum dolor</a></li>
-                                        <li><a href="#">Sit amet consecture</a></li>
-                                        <li><a href="#">Dolorem respequem</a></li>
-                                        <li><a href="#">Invenore veritae</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="widget">
-                                    <h3 class="widget-title">Help Center</h3>
-                                    <ul class="no-bullet">
-                                        <li><a href="#">Lorem ipsum dolor</a></li>
-                                        <li><a href="#">Sit amet consecture</a></li>
-                                        <li><a href="#">Dolorem respequem</a></li>
-                                        <li><a href="#">Invenore veritae</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="widget">
-                                    <h3 class="widget-title">Join Us</h3>
-                                    <ul class="no-bullet">
-                                        <li><a href="#">Lorem ipsum dolor</a></li>
-                                        <li><a href="#">Sit amet consecture</a></li>
-                                        <li><a href="#">Dolorem respequem</a></li>
-                                        <li><a href="#">Invenore veritae</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="widget">
-                                    <h3 class="widget-title">Social Media</h3>
-                                    <ul class="no-bullet">
-                                        <li><a href="#">Facebook</a></li>
-                                        <li><a href="#">Twitter</a></li>
-                                        <li><a href="#">Google+</a></li>
-                                        <li><a href="#">Pinterest</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="widget">
-                                    <h3 class="widget-title">Newsletter</h3>
-                                    <form action="#" class="subscribe-form">
-                                        <input type="text" placeholder="Email Address">
-                                    </form>
-                                </div>
-                            </div>
-                        </div> <!-- .row -->
-
-                        <div class="colophon">Copyright 2014 Company name, Designed by Themezy. All rights reserved</div>
+                        <div class="colophon">Copyright 2022 BlockBuster, Designed by BlockBuster. All rights reserved</div>
                     </div> <!-- .container -->
-
                 </footer>
             </div>
-            <!-- Default snippet for navigation -->
-            
-
 
             <script src={% static 'js/js/jquery-1.11.1.min.js' %}></script>
             <script src={% static 'js/js/plugins.js' %}></script>
