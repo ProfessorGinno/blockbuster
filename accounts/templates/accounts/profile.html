@@ -67,6 +67,7 @@
         {% if perms.accounts.delete_user %}
             <a href={% url 'delete_profile' user.id %}><button class="btn btn-danger ">Delete account</button></a>
         {% endif %}
+        <a href={% url 'change_password'%}><button class="btn btn-danger ">Change password</button></a>
     </div>
 </div>
 {% endblock content %}
