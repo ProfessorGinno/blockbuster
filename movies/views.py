@@ -10,7 +10,7 @@ def index(request):
     movie = Movie.objects.order_by('-date').all()
     return render(request, template_name="movies/movie_index.html", context={"movie": movie})
 
-class DetailMovie(DeleteView):
+class DetailMovie(DetailView):
     model = Movie
     template_name = "movies/movie_detail.html"
 

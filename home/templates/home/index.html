@@ -9,7 +9,9 @@
     <a class="navbar-brand">Blockbuster Streaming App</a>
     <div class="d-flex">
       {% if user.is_authenticated %}
-      <button type="button" class="btn btn-danger top-sign-in">You are authenticated</button>
+      <a href={% url 'movie_index' %}>
+        <button type="button" class="btn btn-danger top-sign-in">Go to Movie Index</button>
+      </a>
       {% else %}
       <a href="{% url 'login' %}">
         <button type="button" class="btn btn-danger top-sign-in">Login</button>

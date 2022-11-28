@@ -7,5 +7,5 @@ urlpatterns = [
     path("update-movie/<int:pk>", UpdateMovie.as_view(), name="update_movie"),
     path("delete-movie/<int:pk>", DeleteMovie.as_view(), name="delete_movie"),   
     path("movie-index/", index, name="movie_index"),
-    path("detailed-movie/<int:pk>", DetailMovie.as_view(), name="detalied_view"),
+    path("detailed-movie/<int:pk>", DetailMovie.as_view(), name="detailed_movie"),
 ]
