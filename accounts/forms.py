@@ -1,7 +1,6 @@
 from django import forms
 
 
-
 class UserEditForm(forms.Form):
 
     email = forms.EmailField(label='', required=False, widget=forms.TextInput(attrs={'Placeholder':'Email'}) )
