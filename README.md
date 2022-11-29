@@ -1,4 +1,10 @@
-ENG
+
+# Guide table based on preferred lenguage  | Tabla de guía según el idioma.
+1. [ENG](#eng)
+2. [ES](#es)
+
+# ENG <a name="eng"></a>
+
 # Instructions to run this project locally
 
 - Open Git Bash for `Windows` or a terminal for `Linux/Unix`.
@@ -163,7 +169,7 @@ git remote set-url origin <url_of_repository_on_GitHub>
 
 
 
-ES
+# ES <a name="es"></a>
 # Instrucciones para ejecutar este proyecto en local
 
 - Abrir Git Bash para `Windows` o una terminal para `Linux/Unix`.

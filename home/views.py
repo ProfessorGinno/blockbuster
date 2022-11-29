@@ -6,3 +6,5 @@ def homepage(request):
 
 def error_404(request, exception):
     return  render(request, template_name="errors/error_404.html")
+def about(request):
+    return render(request, template_name="home/about.html")

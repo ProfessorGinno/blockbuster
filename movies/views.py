@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from .models import Movie
 from django.views.generic.list import ListView
-from django.views.generic import DeleteView, UpdateView, CreateView, DetailView
+from django.views.generic import DeleteView, UpdateView, CreateView, DetailView, FormView
+from .forms import SearchForm
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse_lazy
+from django.db.models import Q
 
 
 def index(request):
@@ -37,3 +39,13 @@ class DeleteMovie(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = Movie
     template_name = "movies/delete_movie.html"
     success_url = reverse_lazy("movie_index")
+
+
+class SearchMovie(ListView):
+    model = Movie
+    template_name = 'movies/search_movie.html'
+    
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        object_list = Movie.objects.filter(Q(title__icontains=query)|Q(genre__icontains=query))
+        return object_list
