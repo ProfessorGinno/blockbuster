@@ -17,7 +17,7 @@ Search Movie
 <div id="site-content">
     <header class="site-header">
         <div class="container">
-            <a href="index.html" id="branding">
+            <a href={% url 'movie_index' %} id="branding">
                 <img src={% static 'img/logo.png' %} alt="" class="logo">
                 <div class="logo-copy">
                     <h1 class="site-title">BlockBuster</h1>
@@ -30,7 +30,9 @@ Search Movie
                 <ul class="menu">
                     <li class="menu-item"><a href="about.html">About</a></li>
                     <li class="menu-item"><a href={% url 'movie_index'%}>Movie Index</a></li>
+                    {% if perms.movies.add_movies %}
                     <li class="menu-item"><a href={% url 'create_movie' %}>Create Movie</a></li>
+                    {% endif %}
                     <li class="menu-item"><a href={% url 'profile' %}>User Profile</a></li>
                     <li class="menu-item"><a href={% url 'logout' %}>Logout</a></li>
                 </ul>
@@ -153,7 +155,7 @@ Search Movie
             </div>
         </div>
 
-            <script src={% static 'js/js/jquery-1.11.1.min.js' %}></script>
-            <script src={% static 'js/js/plugins.js' %}></script>
-            <script src={% static 'js/js/app.js' %}></script>
+            <script src={% static 'js/jquery-1.11.1.min.js' %}></script>
+            <script src={% static 'js/plugins.js' %}></script>
+            <script src={% static 'js/app.js' %}></script>
 {% endblock content %}

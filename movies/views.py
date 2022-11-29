@@ -19,6 +19,7 @@ class DetailMovie(LoginRequiredMixin, DetailView):
 
 class CreateMovie(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     model = Movie
+    permission_required = "movies.add_movie"
     template_name = "movies/create_movie.html"
     success_url = reverse_lazy("movie_index")
     fields = ["title", "genre", "description", "date", "cover_image", "scene_image_1", "scene_image_3", "scene_image_2", "trailer_link", "movie_file_4k", "movie_file_uhd"]
@@ -30,6 +31,7 @@ class ListMovie(LoginRequiredMixin, ListView):
 
 class UpdateMovie(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     model = Movie
+    permission_required = "movies.change_movie"
     template_name = "movies/update_movie.html"
     success_url = reverse_lazy("movie_index")
     fields = ["title", "genre", "description", "date", "cover_image", "scene_image_1", "scene_image_3", "scene_image_2", "trailer_link", "movie_file_4k", "movie_file_uhd"]
@@ -37,11 +39,12 @@ class UpdateMovie(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
 
 class DeleteMovie(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = Movie
+    permission_required = "movies.delete_movie"
     template_name = "movies/delete_movie.html"
     success_url = reverse_lazy("movie_index")
 
 
-class SearchMovie(ListView):
+class SearchMovie(LoginRequiredMixin, ListView):
     model = Movie
     template_name = 'movies/search_movie.html'
     
