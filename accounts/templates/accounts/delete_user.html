@@ -10,14 +10,14 @@
 <div class='bg-img'>
     <div class='sign-up-form'>
         <form action={% url 'delete_profile' user.id %} method="POST">
+            {% csrf_token %}
             <h2 style="text-align:center;">You are erasing the user:</h2>
             <h2 style="text-align:center;"><strong>{{user}}</strong></h2>
-            {% csrf_token %}
-        </form>
             <div class="col-md-12 btn-container">
                 <button class="btn btn-primary profile-button-signup" type="submit">Confirm</button>
                 <a href={% url 'movie_index' %}><button class="btn btn-primary profile-button-signup mx-2" type="button">Cancel</button></a>
-        </div>
+            </div>
+        </form>
     </div>
 </div>
 {% endblock content %}
