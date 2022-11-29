@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About{% endblock title %}
+
+{% block header %}
+
+{% endblock header %}
+    <link href={% static "css/about.css"%} rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+{% block content %}
+
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href={% url 'home' %}>| Index |</a></li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href={% url 'movie_index' %}>| Movies |</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+        <header class="py-5 bg-image-full" style="background-image: url({% static 'img/movie-trailer.jpg' %})">
+            <div class="text-center my-5">
+                <img class="img-fluid rounded-circle mb-4" src={% static 'img/blockbuster-img.png' %} alt="..." />
+                <h1 class="text-white fs-3 fw-bolder">BlockBuster</h1>
+                <p class="text-white-50 mb-0">Streaming App for your entertainment</p>
+            </div>
+        </header>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h2>What do we do?</h2>
+                        <p class="lead">We are professionals in the field of entertainment, we've been in the market of movies, documentaries and series for more than 20 years. Now, we dedicate ourselves to streaming entertainment in 4k and UHD</p>
+                        <p class="mb-0">With the help of our CEO: <strong>Ginno Andres Vera Valencia</strong> and our Innovation and development deparment leaded by <strong>Jhonatan Calderon Cardona</strong>, we hope to keep on achiving our <strong>Mission</strong>: revolutionating the industry of the streaming; bringing more and diverse multimedia resources right into the house of all of our clients</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Image element - set the background image for the header in the line below-->
+        <div class="py-5 bg-image-full" style="background-image: url({% static 'img/movie-trailer.jpg' %})">
+            <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+            <div style="height: 20rem"></div>
+        </div>
+        <!-- Content section-->
+        <section class="py-5">
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <h2>Our story</h2>
+                        <p class="lead">We are two friends that decided to change the way people used to enjoy the 7th art industry; the films industry. Back there in the 1950's we decided to create a local store were everybody could go in and rent or buy the movie they would love for that special night. However, with the advenue of the internet revolution, we felt the need of improvement, hence, the building of a new way of watching movies with the help of the ICT's started to grow deep into our head. Therefore, we created BlockBuster Streaming App, the digital local where you can come in and observer everything you want, whenver you desire, in the heighest resolution you need.</p>
+                        <p class="mb-0">If you desire to embark with us in our dream, or if you desire to contact us for any other need, please reach us at:</p>
+                        <p class="mb-0">blockbuster@revolutionfilms.com or at 555-555-5555-55</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Blockbuster 2022</p></div>
+        </footer>
+{% endblock content %}

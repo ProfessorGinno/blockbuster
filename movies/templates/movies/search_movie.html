@@ -23,24 +23,18 @@ Search Movie
                     <h1 class="site-title">BlockBuster</h1>
                     <small class="site-description">Watch all you want, whenever you want</small>
                 </div>
-            </a> <!-- #branding -->
+            </a>
             
             <div class="main-navigation">
                 <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
                 <ul class="menu">
-                    <li class="menu-item"><a href={% url 'movie_index'%}>Movie Index</a></li>
                     <li class="menu-item"><a href="about.html">About</a></li>
+                    <li class="menu-item"><a href={% url 'movie_index'%}>Movie Index</a></li>
                     <li class="menu-item"><a href={% url 'create_movie' %}>Create Movie</a></li>
                     <li class="menu-item"><a href={% url 'profile' %}>User Profile</a></li>
                     <li class="menu-item"><a href={% url 'logout' %}>Logout</a></li>
-                </ul> <!-- .menu -->
-                
-                <form action="#" class="search-form">
-                    <input type="text" placeholder="Search...">
-                    <button><i class="fa fa-search"></i></button>
-                </form>
-            </div> <!-- .main-navigation -->
-            
+                </ul>
+            </div>           
             <div class="mobile-navigation"></div>
         </div>
     </header>
@@ -57,63 +51,20 @@ Search Movie
                             </ul>
                         </div>
                     </div>
-                                <div class="col-md-3">
-                                    <div class="row">
-                                        <div class="col-sm-6 col-md-12">
-                                            <div class="latest-movie">
-                                                <h3 style="color:black; text-align:center;">Complete results list <br> Click to go to the movie</h3>
-                                                <ul>
-                                                    {% for movie in object_list %}
-                                                    <a href={% url 'detailed_movie' movie.id%}><p style="color:grey;">{{forloop.counter}} {{movie.title}}</p></a>
-                                                    {% endfor %}
-                                                </ul>
-                                                {% if movie.3 %}
-                                                <a href={% url 'detailed_movie' movie.3.id %}><img style="height:315px" src={{ movie.3.cover_image.url }} alt="Movie 1"></a>
-                                                {% elif movie.3 is null and movie.0 %}
-                                                <a href={% url 'detailed_movie' movie.0.id %}><img style="height:315px" src={{ movie.0.cover_image.url }} alt="Movie 1"></a>
-                                                {% endif %}
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-12">
-                                            <div class="latest-movie">
-                                                {% if movie.4 %}
-                                                <a href={% url 'detailed_movie' movie.4.id %}><img style="height:315px" src={{ movie.4.cover_image.url }} alt="Movie 2"></a>
-                                                {% endif %}
-                                            </div>
+                            <div class="col-md-3">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-12">
+                                        <div class="latest-movie">
+                                            <h3 style="color:black; text-align:center;">Complete results list <br> Click to go to the movie</h3>
+                                            <ul>
+                                                {% for movie in object_list %}
+                                                <a href={% url 'detailed_movie' movie.id%}><p style="color:grey;">{{forloop.counter}} {{movie.title}}</p></a>
+                                                {% endfor %}
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                            </div> <!-- .row -->
-                            <div class="row">
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="latest-movie">
-                                        {% if movie.5 %}
-                                        <a href={% url 'detailed_movie' movie.5.id %}><img style="height:315px" src={{ movie.5.cover_image.url }} alt="Movie 3"></a>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="latest-movie">
-                                        {% if movie.6 %}
-                                        <a href={% url 'detailed_movie' movie.6.id %}><img style="height:315px" src={{ movie.6.cover_image.url }} alt="Movie 3"></a>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="latest-movie">
-                                        {% if movie.7 %}
-                                        <a href={% url 'detailed_movie' movie.7.id %}><img style="height:315px" src={{ movie.7.cover_image.url }} alt="Movie 3"></a>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-md-3">
-                                    <div class="latest-movie">
-                                        {% if movie.8 %}
-                                        <a href={% url 'detailed_movie' movie.8.id %}><img style="height:315px" src={{ movie.8.cover_image.url }} alt="Movie 3"></a>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div> <!-- .row -->
+                            </div>
                             <form action={% url 'search-movie' %} method="GET">
                                 <input name="q" type="text" placeholder="Search movie or genre">
                                 <input type="submit" value="Search Movie">
@@ -125,19 +76,19 @@ Search Movie
                                         <li>
                                             <div class="date">Nov 2022
                                             </div>
-                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">The black panther</span></a></h2>
+                                            <h2 class="entry-title"><span style="color: #0068c3;">The black panther</span></h2>
                                         </li>
                                         <li>
                                             <div class="date">Jan 2023</div>
-                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">Fast and furious 23</span></a></h2>
+                                            <h2 class="entry-title"><span style="color: #0068c3;">Fast and furious 23</span></h2>
                                         </li>
                                         <li>
                                             <div class="date">Jan 2023</div>
-                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">Sharknado 32</span></a></h2>
+                                            <h2 class="entry-title"><span style="color: #0068c3;">Sharknado 32</span></h2>
                                         </li>
                                         <li>
                                             <div class="date">Feb 2023</div>
-                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">Karate-kid: Now with real asians</span></a></h2>
+                                            <h2 class="entry-title"><span style="color: #0068c3;">Karate-kid: Now with real asians</span></h2>
                                         </li>
                                     </ul> <!-- .movie-schedule -->
                                 </div>
@@ -146,19 +97,19 @@ Search Movie
                                     <ul class="movie-schedule">
                                         <li>
                                             <div class="date">Dec 2024</div>
-                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">The pirates of caribbean 8</span></a></h2>
+                                            <h2 class="entry-title"><span style="color: #0068c3;">The pirates of caribbean 8</span></h2>
                                         </li>
                                         <li>
                                             <div class="date">Oct 2025</div>
-                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">John Carter 2</span></a></h2>
+                                            <h2 class="entry-title"><span style="color: #0068c3;">John Carter 2</span></h2>
                                         </li>
                                         <li>
                                             <div class="date">Nov 2025</div>
-                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">Sheena the warrior princess 2025</span></a></h2>
+                                            <h2 class="entry-title"><span style="color: #0068c3;">Sheena the warrior princess 2025</span></h2>
                                         </li>
                                         <li>
                                             <div class="date">Jun 2040</div>
-                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">Avatar 3</span></a></h2>
+                                            <h2 class="entry-title"><span style="color: #0068c3;">Avatar 3</span></h2>
                                         </li>
                                     </ul> <!-- .movie-schedule -->
                                 </div>
@@ -167,39 +118,40 @@ Search Movie
                                     <ul class="movie-schedule">
                                         <li>
                                             <div class="date">Jan 2022</div>
-                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">Black Adam</span></a></h2>
+                                            <h2 class="entry-title"><span style="color: #0068c3;">Black Adam</span></h2>
                                         </li>
                                         <li>
                                             <div class="date">Jan 2022</div>
-                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">GodFather</span></a></h2>
+                                            <h2 class="entry-title"><span style="color: #0068c3;">GodFather</span></h2>
                                         </li>
                                         <li>
                                             <div class="date">Aug 2022</div>
-                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">Fullmetal Alchemist</span></a></h2>
+                                            <h2 class="entry-title"><span style="color: #0068c3;">Fullmetal Alchemist</span></h2>
                                         </li>
                                         <li>
                                             <div class="date">Sept 2022</div>
-                                            <h2 class="entry-title"><a href="#"><span style="color: #0068c3;">One piece Film</span></a></h2>
+                                            <h2 class="entry-title"><span style="color: #0068c3;">One piece Film</span></h2>
                                         </li>
-                                    </ul> <!-- .movie-schedule -->
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- .container -->
+                    </div>
+                </div>
                 </main>
                 <footer class="site-footer">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="widget">
-                                    <h3 class="widget-title">About Us</h3>
-                                    <p>We're a company that brings multimedia entertainment to the palm of your hand. <img style="width:10%;" src={% static 'img/blockbuster-img.png' %} alt=""></p>
+                                    <h3 class="widget-title">BlockBuster <img style="width:10%;" src={% static 'img/blockbuster-img.png' %}></h3>
                                 </div>
                             </div>
                         <div class="colophon">Copyright 2022 BlockBuster, Designed by BlockBuster. All rights reserved</div>
-                    </div> <!-- .container -->
+                    </div>
                 </footer>
             </div>
+        </div>
 
             <script src={% static 'js/js/jquery-1.11.1.min.js' %}></script>
             <script src={% static 'js/js/plugins.js' %}></script>
