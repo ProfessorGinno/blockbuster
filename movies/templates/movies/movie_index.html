@@ -28,7 +28,9 @@
                             <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
                             <ul class="menu">
                                 <li class="menu-item"><a href={% url 'about' %}>About</a></li>
-                                <li class="menu-item"><a href={% url 'create_movie' %}>Create Movie</a></li>
+                                {% if parms.movies.add_movies %}
+                                    <li class="menu-item"><a href={% url 'create_movie' %}>Create Movie</a></li>
+                                {% endif %}
                                 <li class="menu-item"><a href={% url 'profile' %}>User Profile</a></li>
                                 <li class="menu-item"><a href={% url 'logout' %}>Logout</a></li>
                             </ul> <!-- .menu -->
