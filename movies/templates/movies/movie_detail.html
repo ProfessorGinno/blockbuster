@@ -36,15 +36,15 @@
                     <div class="row gx-5 align-items-center justify-content-center">
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
                             <div class="my-5 text-center text-xl-start">
-                                <h1 class="display-5 fw-bolder text-white mb-2">{{ object.title }}</h1>
-                                <p class="lead fw-normal text-white-50 mb-4">Genres: {{ object.genre }}</p>
+                                <h1 class="display-5 fw-bolder text-white mb-2">{{ movie.title }}</h1>
+                                <p class="lead fw-normal text-white-50 mb-4">Genres: {{ movie.genre }}</p>
                                 <h3 class="lead fw-normal text-white-60 mb-2">Description:</h3>
-                                <p class="lead fw-normal text-white-50 mb-4">{{ object.description }}</p>
-                                <p class="lead fw-normal text-white-50 mb-4">Release date: {{ object.date }}</p>
+                                <p class="lead fw-normal text-black-50 mb-4">{{ movie.description|safe }}</p>
+                                <p class="lead fw-normal text-white-50 mb-4">Release date: {{ movie.date }}</p>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                     <a class="btn btn-outline-primary btn-lg px-6 me-sm-3" href="#features">Watch now</a>
-                                    <a class="btn btn-primary btn-lg px-6" href={{ object.movie_file_4k.url }} download>Download 4K</a>
-                                    <a class="btn btn-primary btn-lg px-6" href={{ object.movie_file_uhd.url }} download>Download UHD</a>
+                                    <a class="btn btn-primary btn-lg px-6" href={{ movie.movie_file_4k.url }} download>Download 4K</a>
+                                    <a class="btn btn-primary btn-lg px-6" href={{ movie.movie_file_uhd.url }} download>Download UHD</a>
                                 </div>
                             </div>
                         </div>

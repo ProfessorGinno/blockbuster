@@ -2,6 +2,11 @@
 
 {% load static %}
 
+{% block extrahead %}
+<script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
+{{ block.super }}
+{% endblock %}
+
 {% block header %}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -15,6 +20,7 @@
 {% block content %}
 <form action = {% url "update_movie" movie.id %} method="POST" enctype='multipart/form-data'>
     {% csrf_token %}
+    {{ form.media }}
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
             <!-- Navigation-->
@@ -43,7 +49,7 @@
                                 </div>
                                 <p class="lead fw-normal text-red-50 mb-4" style="color: #00b6ff;">Genres: <br> {{ form.genre }}</p>
                                 <h3 class="lead fw-normal mb-2" style="color: #00b6ff;">Description:</h3>
-                                <p class="lead fw-normal text-red-50 mb-4">{{ form.description }}</p>
+                                <p class="lead fw-normal text-red-50 mb-4">{{ form.description |safe }}</p>
                                 <p class="lead fw-normal text-red-50 mb-4" style="color: #00b6ff;">Release date: <br> {{ form.date }}</p>
                             </div>
                         </div>

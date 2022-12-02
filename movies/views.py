@@ -1,16 +1,13 @@
 from django.shortcuts import render
-from .models import Movie
 from django.views.generic.list import ListView
 from django.views.generic import DeleteView, UpdateView, CreateView, DetailView, FormView
-from .forms import SearchForm
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse_lazy
 from django.db.models import Q
 
+from .forms import SearchForm
+from .models import Movie
 
-def index(request):
-    movie = Movie.objects.order_by('-date').all()
-    return render(request, template_name="movies/movie_index.html", context={"movie": movie})
 
 class DetailMovie(LoginRequiredMixin, DetailView):
     model = Movie
@@ -47,8 +44,13 @@ class DeleteMovie(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
 class SearchMovie(LoginRequiredMixin, ListView):
     model = Movie
     template_name = 'movies/search_movie.html'
-    
+
     def get_queryset(self):
         query = self.request.GET.get('q')
         object_list = Movie.objects.filter(Q(title__icontains=query)|Q(genre__icontains=query))
         return object_list
+
+
+def index(request):
+    movie = Movie.objects.order_by('-date').all()
+    return render(request, template_name="movies/movie_index.html", context={"movie": movie})

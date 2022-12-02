@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
     'crispy_forms',
     'home.apps.HomeConfig',
     'accounts.apps.AccountsConfig',
@@ -137,3 +138,11 @@ LOGIN_URL = "login"
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'width': 'auto',
+        'toolbarCanCollapse': True,
+    },
+    'background-color': "black",
+}
