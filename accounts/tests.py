@@ -2,7 +2,7 @@ from django.test import TestCase, Client
 from django.contrib.auth.models import User
 
 
-class LoginUserTestCase(TestCase):
+class AccountTestCase(TestCase):
 
     def setUp(self):
         self.credentials = {
@@ -14,8 +14,8 @@ class LoginUserTestCase(TestCase):
             "username":'admin123',
             "password":"test123"
         }
-        User.objects.create_user(**self.credentials)
-        User.objects.create_superuser(**self.credentials_superuser)
+        self.user = User.objects.create_user(**self.credentials)
+        self.superuser = User.objects.create_superuser(**self.credentials_superuser)
         self.client = Client()
 
     def test_login_user(self):
@@ -26,6 +26,13 @@ class LoginUserTestCase(TestCase):
         response = self.client.post('/admin/', self.credentials_superuser, follow=True)
         self.assertEqual(response.status_code, 200)
 
-class SignUpUserTestCase(TestCase):
-    def setUp(self):
-        self.data
+    def test_wrong_username(self):
+        response = self.client.post('/admin/', {'username':'wrong', 'password':'temp123'})
+        self.assertFalse(response.get('authenticated'))
+
+    def test_wrong_password(self):
+        response = self.client.post('/admin/', {'username':'test.user', 'password':'wrong'})
+        self.assertEqual(response.status_code, 302)
+
+    def test_delete_user(self):
+        self.user.delete()

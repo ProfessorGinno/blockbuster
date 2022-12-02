@@ -60,7 +60,7 @@ border: solid 1px #c86868
 }
 
 .bg-img{
-  background-image: url('static/img/bg.jpg') no-repeat center center fixed;
+  background-image: url('../img/bg_accounts.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
