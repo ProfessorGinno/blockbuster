@@ -1,11 +1,10 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
-from django.views.generic import DeleteView, UpdateView, CreateView, DetailView, FormView
+from django.views.generic import DeleteView, UpdateView, CreateView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse_lazy
 from django.db.models import Q
 
-from .forms import SearchForm
 from .models import Movie
 
 

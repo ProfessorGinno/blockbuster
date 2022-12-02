@@ -134,11 +134,14 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Login url config
 LOGIN_URL = "login"
 
+# Media path config
 MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+# ckeditor config
 CKEDITOR_CONFIGS = {
     'default': {
         'width': 'auto',

@@ -17,22 +17,22 @@
 {% endblock title %}
 
 {% block content %}
-<form action = {% url "create_movie" %} method="POST" enctype='multipart/form-data'>
-    {% csrf_token %}
-    {{ form.media }}
-    <body class="d-flex flex-column h-100">
-        <main class="flex-shrink-0">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container px-5">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href={% url 'movie_index'%}>| Return |</a></li>
-                            <li class="nav-item"><a class="nav-link" href={% url 'logout'%}>| Logout |</a></li>
-                        </ul>
-                    </div>
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href={% url 'movie_index'%}>| Return |</a></li>
+                        <li class="nav-item"><a class="nav-link" href={% url 'logout'%}>| Logout |</a></li>
+                    </ul>
                 </div>
-            </nav>
+            </div>
+        </nav>
+        <form action = {% url "create_movie" %} method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+            {{ form.media }}
             <header class="bg-dark py-5">
                 <div class="container px-5">
                     <div class="row gx-5 align-items-center justify-content-center">
@@ -76,12 +76,10 @@
                                 <div class="col mb-5 h-100">
                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><p style="text-align: center;"> Scene 2</p></div>
                                     <img style="width: 100%" src={% static "img/unknown-cover-image.jpg"%}></a>
-                                    
                                 </div>
                                 <div class="col mb-5 mb-md-0 h-100">
                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><p style="text-align: center;"> Scene 3</p></div>
                                     <img style="width: 100%" src={% static "img/unknown-cover-image.jpg"%}></a>
-                                    
                                 </div>
                                 <div class="col h-100">
                                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><p style="text-align: center;"> Trailer </p></div>
@@ -94,8 +92,8 @@
                 <div class="d-flex justify-content-center align-content-center">
                     <button class="btn btn-outline-danger btn-lg" type="submit">Save changes</button>
                 </div>
-            </form>
             </section>
+        </form>
         </main>
         <footer class="bg-dark py-4 mt-auto">
             <div class="container px-5">
@@ -103,6 +101,6 @@
                     <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; BlockBuster 2022</div></div>
                 </div>
             </div>
-        </footer>>
+        </footer>
     </body>
 {% endblock content %}
